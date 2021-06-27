@@ -8,7 +8,7 @@
 #include <iterator>
 #include "utils.cpp"
 #include <cmath>
-
+#include <benchmark/benchmark.h>
 
 std::vector<int> prefix_sum(std::vector<int> a,int S)
 {
@@ -171,7 +171,7 @@ std::vector<int> parallel_sort(std::vector<int> &a, size_t r)
     return result;
 }
 
-
+/*
 int main(){
     
     const long unsigned int N = 2000000;
@@ -190,5 +190,30 @@ int main(){
 
     return 0;
 }
+*/
+
+void BM_parallel_sort(benchmark::State& state) {
+
+    state.PauseTiming();
+
+    int n = state.range(0);
+    int r = sqrt(n);
+    std::vector<int> arr(n);
+    std::vector<int> result(n);
+
+    for(int i=0;i<n;i++)
+        arr[i] = rand() % r;
+
+    state.ResumeTiming();
+
+    for (auto _ : state) {
+        result = parallel_sort(arr,r);
+    }
+    state.SetComplexityN(state.range(0));
+}
 
 
+BENCHMARK(BM_parallel_sort)
+    ->RangeMultiplier(2)->Range(32, 1<<20)->MeasureProcessCPUTime()->UseRealTime()->Complexity(benchmark::oNLogN);
+
+BENCHMARK_MAIN();
