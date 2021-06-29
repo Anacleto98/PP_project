@@ -192,6 +192,6 @@ void BM_parallel_sort(benchmark::State& state) {
 
 
 BENCHMARK(BM_parallel_sort)
-    ->RangeMultiplier(2)->Range(32, 1<<20)->MeasureProcessCPUTime()->UseRealTime()->Complexity(benchmark::oNLogN);
+    ->RangeMultiplier(4)->Range(32, 1<<20)->MeasureProcessCPUTime()->UseRealTime()->Complexity(benchmark::oNLogN);
 
 BENCHMARK_MAIN();
