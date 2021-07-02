@@ -8,7 +8,7 @@
 #include <iterator>
 #include "utils.cpp"
 #include <cmath>
-//#include <benchmark/benchmark.h>
+#include <benchmark/benchmark.h>
 
 std::vector<int> prefix_sum(std::vector<int> &a,int S)
 {
@@ -23,7 +23,7 @@ std::vector<int> prefix_sum(std::vector<int> &a,int S)
         //std::copy(std::begin(p_sum), std::end(p_sum), std::begin(b)); // 
         b = p_sum;
         // this can be done in parallel
-        #pragma omp parallel for
+        #pragma omp parallel for 
         for(int i = offset; i < S; i++){
             p_sum[i] = b[i]+b[i-range];
         }
@@ -51,11 +51,11 @@ std::vector<std::vector<int>> partition(std::vector<int> &src, int r)
 
 void init_number(std::vector<std::vector<int>> &number, std::vector<std::vector<int>> &b, int N, int r)
 {
-    #pragma parallel for 
+    int j;
+    #pragma omp parallel for private(j)
     for(int i = 0; i < N/r; i++)
     {
-        //#pragma parallel for 
-        for(int j = 0; j < r; j++)
+        for(j = 0; j < r; j++)
         {
             number[b[i][j]][i]++;
         }
@@ -67,12 +67,11 @@ void init_serial(std::vector<int> &serial,std::vector<std::vector<int>> &b,int N
 {
     int count;
     int j,k;
-    #pragma parallel for private(j,k,count)
+    #pragma omp parallel for private(j,k,count)
     for(int i = 0; i < N/r; i++)
     {
         serial[i*r] = 0;
 
-        //#pragma parallel for private(k,count) num_threads(4)
         for(j = 1; j < r; j++)
         {
             count = 0;
@@ -107,7 +106,7 @@ std::vector<int> parallel_sort(std::vector<int> &a, size_t r)
     init_serial(serial,b,N,r);
 
 
-    #pragma omp parallel for 
+    //#pragma omp parallel for 
     for(int i = 0; i< r; i++)
     {
         prefix_sums[i] = prefix_sum(number[i],N/r);
@@ -150,12 +149,14 @@ std::vector<int> parallel_sort(std::vector<int> &a, size_t r)
     return result;
 }
 
+/*
+
 int main(){
     
     const long unsigned int N = 10000000;
     std::vector<int> a(N);
     std::vector<int> result(N);
-    
+    omp_set_nested(1);
     int r=100;
     // aux data structure 
 
@@ -172,11 +173,11 @@ int main(){
 }
 
 
-/*
+*/
 
 void BM_parallel_sort(benchmark::State& state) {
 
-
+    omp_set_nested(1);
     int n = state.range(0);
     int r = sqrt(n);
     std::vector<int> arr(n);
@@ -194,8 +195,7 @@ void BM_parallel_sort(benchmark::State& state) {
 
 
 BENCHMARK(BM_parallel_sort)
-    ->RangeMultiplier(2)->Range(32, 1<<20)->MeasureProcessCPUTime()->UseRealTime()->Complexity();
+    ->RangeMultiplier(2)->Range(32, 1<<20)->Complexity();
 
 BENCHMARK_MAIN();
 
-*/
