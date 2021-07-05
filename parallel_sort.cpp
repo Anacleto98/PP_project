@@ -8,7 +8,7 @@
 #include <iterator>
 #include "utils.cpp"
 #include <cmath>
-#include <benchmark/benchmark.h>
+
 
 std::vector<int> prefix_sum(std::vector<int> &a,int S)
 {
@@ -72,9 +72,11 @@ void init_serial(std::vector<int> &serial,std::vector<std::vector<int>> &b,int N
     {
         serial[i*r] = 0;
 
+        
         for(j = 1; j < r; j++)
         {
             count = 0;
+
             for(k = j-1; k >= 0; k--)
             {
                 if(b[i][j] == b[i][k])
@@ -149,31 +151,39 @@ std::vector<int> parallel_sort(std::vector<int> &a, size_t r)
     return result;
 }
 
-/*
+
 
 int main(){
     
-    const long unsigned int N = 10000000;
+    const long unsigned int N = 100000000;
     std::vector<int> a(N);
     std::vector<int> result(N);
+    
+    /*
     omp_set_nested(1);
-    int r=100;
+    omp_set_dynamic(0);
+    */
+
+    int r=500;
     // aux data structure 
 
 
     for(int i=0;i<N;i++)
         a[i] = rand() % r;
 
-    for(int i = 0; i<1; i++)
-        result = parallel_sort(a,r);
     
-    
+    std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
+    result = parallel_sort(a,r);
+    std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
+
+    std::cout << "Time difference = " << std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count() << "[µs]" << std::endl;
+    std::cout << "Time difference = " << std::chrono::duration_cast<std::chrono::nanoseconds> (end - begin).count() << "[ns]" << std::endl;
 
     return 0;
 }
 
 
-*/
+/*
 
 void BM_parallel_sort(benchmark::State& state) {
 
@@ -199,3 +209,4 @@ BENCHMARK(BM_parallel_sort)
 
 BENCHMARK_MAIN();
 
+*/
