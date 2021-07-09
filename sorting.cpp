@@ -184,27 +184,23 @@ void BM_parallel_sort_128(benchmark::State& state) {
 
 
 BENCHMARK(BM_serial_sort)
-    ->RangeMultiplier(2)->Range(4096, 1<<24)->UseRealTime()->Complexity(benchmark::oN);
+    ->RangeMultiplier(2)->Range(4096, 1<<26)->UseRealTime()->Complexity(benchmark::oN);
 
 BENCHMARK(BM_parallel_sort_2)
-    ->RangeMultiplier(2)->Range(4096, 1<<24)->UseRealTime()->Complexity(benchmark::oN);
+    ->RangeMultiplier(2)->Range(4096, 1<<26)->UseRealTime()->Complexity(benchmark::oN);
 
 BENCHMARK(BM_parallel_sort_4)
-    ->RangeMultiplier(2)->Range(4096, 1<<24)->UseRealTime()->Complexity(benchmark::oN);
+    ->RangeMultiplier(2)->Range(4096, 1<<26)->UseRealTime()->Complexity(benchmark::oN);
 
 BENCHMARK(BM_parallel_sort_8)
-    ->RangeMultiplier(2)->Range(4096, 1<<24)->UseRealTime()->Complexity(benchmark::oN);
+    ->RangeMultiplier(2)->Range(4096, 1<<26)->UseRealTime()->Complexity(benchmark::oN);
 
 BENCHMARK(BM_parallel_sort_16)
-    ->RangeMultiplier(2)->Range(4096, 1<<24)->UseRealTime()->Complexity(benchmark::oN);
+    ->RangeMultiplier(2)->Range(4096, 1<<26)->UseRealTime()->Complexity(benchmark::oN);
 
 BENCHMARK(BM_parallel_sort_32)
-    ->RangeMultiplier(2)->Range(4096, 1<<24)->UseRealTime()->Complexity(benchmark::oN);
+    ->RangeMultiplier(2)->Range(4096, 1<<26)->UseRealTime()->Complexity(benchmark::oN);
 
-BENCHMARK(BM_parallel_sort_64)
-    ->RangeMultiplier(2)->Range(4096, 1<<24)->UseRealTime()->Complexity(benchmark::oN);
 
-BENCHMARK(BM_parallel_sort_128)
-    ->RangeMultiplier(2)->Range(4096, 1<<24)->UseRealTime()->Complexity(benchmark::oN);
 
 BENCHMARK_MAIN();
