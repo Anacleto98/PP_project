@@ -37,3 +37,14 @@ void print_vector(std::vector<int> &vec)
     std::cout<<std::endl;
     
 }
+
+int check_ordered(std::vector<int> &vec)
+{
+    int check = 1;
+    for(int i = 1; i < vec.size(); i++)
+    {
+        if(vec[i]<vec[i-1])
+            check = 0;
+    }
+    return check;
+}
