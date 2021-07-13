@@ -12,7 +12,7 @@ void BM_serial_sort(benchmark::State& state) {
     omp_set_num_threads(1);
     
     int n = state.range(0);
-    int r = sqrt(n);
+    int r = n/256;
     std::vector<int> arr(n);
     std::vector<int> result(n);
 
@@ -34,7 +34,7 @@ void BM_parallel_sort_2(benchmark::State& state) {
     omp_set_num_threads(2);
     
     int n = state.range(0);
-    int r = sqrt(n);
+    int r = n/256;
     std::vector<int> arr(n);
     std::vector<int> result(n);
 
@@ -56,7 +56,7 @@ void BM_parallel_sort_4(benchmark::State& state) {
     omp_set_num_threads(4);
     
     int n = state.range(0);
-    int r = sqrt(n);
+    int r = n/256;
     std::vector<int> arr(n);
     std::vector<int> result(n);
 
@@ -78,7 +78,7 @@ void BM_parallel_sort_8(benchmark::State& state) {
     omp_set_num_threads(8);
     
     int n = state.range(0);
-    int r = sqrt(n);
+    int r = n/256;
     std::vector<int> arr(n);
     std::vector<int> result(n);
 
@@ -100,7 +100,7 @@ void BM_parallel_sort_16(benchmark::State& state) {
     omp_set_num_threads(16);
     
     int n = state.range(0);
-    int r = sqrt(n);
+    int r = n/128;
     std::vector<int> arr(n);
     std::vector<int> result(n);
 
@@ -130,9 +130,6 @@ BENCHMARK(BM_parallel_sort_8)
 
 BENCHMARK(BM_parallel_sort_16)
     ->RangeMultiplier(2)->Range(4096, 1<<25)->UseRealTime()->Complexity(benchmark::oN);
-
-
-
 
 
 BENCHMARK_MAIN();
