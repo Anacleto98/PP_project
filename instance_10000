@@ -1,0 +1,851 @@
+desc: --massif-out-file=instance_10000
+cmd: ./memory
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=3807556
+mem_heap_B=366080
+mem_heap_extra_B=2584
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=47400909
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=47753613
+mem_heap_B=367184
+mem_heap_extra_B=2608
+mem_stacks_B=0
+heap_tree=peak
+n4: 367184 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 281600 0x10CF4A: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /mnt/c/Users/Simone/PP_project/memory)
+  n1: 281600 0x10CABF: std::allocator_traits<std::allocator<int> >::allocate(std::allocator<int>&, unsigned long) (in /mnt/c/Users/Simone/PP_project/memory)
+   n1: 281600 0x10C488: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /mnt/c/Users/Simone/PP_project/memory)
+    n1: 281600 0x10C339: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /mnt/c/Users/Simone/PP_project/memory)
+     n3: 281600 0x10BABB: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /mnt/c/Users/Simone/PP_project/memory)
+      n5: 160800 0x10B3A6: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /mnt/c/Users/Simone/PP_project/memory)
+       n1: 40000 0x1095A2: parallel_sort(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+        n0: 40000 0x10AA64: main (in /mnt/c/Users/Simone/PP_project/memory)
+       n1: 40000 0x109666: parallel_sort(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+        n0: 40000 0x10AA64: main (in /mnt/c/Users/Simone/PP_project/memory)
+       n0: 40000 0x10A9C6: main (in /mnt/c/Users/Simone/PP_project/memory)
+       n0: 40000 0x10A9F7: main (in /mnt/c/Users/Simone/PP_project/memory)
+       n0: 800 in 2 places, all below massif's threshold (1.00%)
+      n1: 120000 0x10D3A5: std::vector<int, std::allocator<int> >::vector(std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+       n1: 120000 0x10D267: void std::_Construct<std::vector<int, std::allocator<int> >, std::vector<int, std::allocator<int> > const&>(std::vector<int, std::allocator<int> >*, std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+        n1: 120000 0x10D0C7: std::vector<int, std::allocator<int> >* std::__uninitialized_fill_n<false>::__uninit_fill_n<std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > >(std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+         n1: 120000 0x10CD42: std::vector<int, std::allocator<int> >* std::uninitialized_fill_n<std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > >(std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+          n1: 120000 0x10C7EE: std::vector<int, std::allocator<int> >* std::__uninitialized_fill_n_a<std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> >, std::vector<int, std::allocator<int> > >(std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > const&, std::allocator<std::vector<int, std::allocator<int> > >&) (in /mnt/c/Users/Simone/PP_project/memory)
+           n1: 120000 0x10C0DE: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_fill_initialize(unsigned long, std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+            n3: 120000 0x10B885: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::vector(unsigned long, std::vector<int, std::allocator<int> > const&, std::allocator<std::vector<int, std::allocator<int> > > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+             n1: 40000 0x10925E: partition(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+              n1: 40000 0x109691: parallel_sort(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+               n0: 40000 0x10AA64: main (in /mnt/c/Users/Simone/PP_project/memory)
+             n1: 40000 0x1094B4: parallel_sort(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+              n0: 40000 0x10AA64: main (in /mnt/c/Users/Simone/PP_project/memory)
+             n1: 40000 0x10954D: parallel_sort(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+              n0: 40000 0x10AA64: main (in /mnt/c/Users/Simone/PP_project/memory)
+      n0: 800 in 1 place, below massif's threshold (1.00%)
+ n1: 72704 0x4EC4424: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x40108D1: _dl_init (dl-init.c:72)
+   n0: 72704 0x40010C8: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)
+ n1: 7200 0x10D20F: __gnu_cxx::new_allocator<std::vector<int, std::allocator<int> > >::allocate(unsigned long, void const*) (in /mnt/c/Users/Simone/PP_project/memory)
+  n1: 7200 0x10D05F: std::allocator_traits<std::allocator<std::vector<int, std::allocator<int> > > >::allocate(std::allocator<std::vector<int, std::allocator<int> > >&, unsigned long) (in /mnt/c/Users/Simone/PP_project/memory)
+   n1: 7200 0x10CCDC: std::_Vector_base<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_allocate(unsigned long) (in /mnt/c/Users/Simone/PP_project/memory)
+    n1: 7200 0x10C749: std::_Vector_base<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_create_storage(unsigned long) (in /mnt/c/Users/Simone/PP_project/memory)
+     n1: 7200 0x10C01F: std::_Vector_base<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_Vector_base(unsigned long, std::allocator<std::vector<int, std::allocator<int> > > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+      n1: 7200 0x10B86E: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::vector(unsigned long, std::vector<int, std::allocator<int> > const&, std::allocator<std::vector<int, std::allocator<int> > > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+       n0: 7200 in 3 places, all below massif's threshold (1.00%)
+ n0: 5680 in 4 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=4
+#-----------
+time=51233701
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=detailed
+n4: 366784 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 281200 0x10CF4A: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /mnt/c/Users/Simone/PP_project/memory)
+  n1: 281200 0x10CABF: std::allocator_traits<std::allocator<int> >::allocate(std::allocator<int>&, unsigned long) (in /mnt/c/Users/Simone/PP_project/memory)
+   n1: 281200 0x10C488: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /mnt/c/Users/Simone/PP_project/memory)
+    n1: 281200 0x10C339: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /mnt/c/Users/Simone/PP_project/memory)
+     n3: 281200 0x10BABB: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /mnt/c/Users/Simone/PP_project/memory)
+      n6: 164400 0x10B3A6: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /mnt/c/Users/Simone/PP_project/memory)
+       n1: 40000 0x1095A2: parallel_sort(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+        n0: 40000 0x10AA64: main (in /mnt/c/Users/Simone/PP_project/memory)
+       n1: 40000 0x109666: parallel_sort(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+        n0: 40000 0x10AA64: main (in /mnt/c/Users/Simone/PP_project/memory)
+       n0: 40000 0x10A9C6: main (in /mnt/c/Users/Simone/PP_project/memory)
+       n0: 40000 0x10A9F7: main (in /mnt/c/Users/Simone/PP_project/memory)
+       n1: 4400 0x1090BD: prefix_sum(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+        n1: 4400 0x109768: parallel_sort(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+         n0: 4400 0x10AA64: main (in /mnt/c/Users/Simone/PP_project/memory)
+       n0: 0 in 1 place, below massif's threshold (1.00%)
+      n1: 116000 0x10D3A5: std::vector<int, std::allocator<int> >::vector(std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+       n1: 116000 0x10D267: void std::_Construct<std::vector<int, std::allocator<int> >, std::vector<int, std::allocator<int> > const&>(std::vector<int, std::allocator<int> >*, std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+        n1: 116000 0x10D0C7: std::vector<int, std::allocator<int> >* std::__uninitialized_fill_n<false>::__uninit_fill_n<std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > >(std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+         n1: 116000 0x10CD42: std::vector<int, std::allocator<int> >* std::uninitialized_fill_n<std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > >(std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+          n1: 116000 0x10C7EE: std::vector<int, std::allocator<int> >* std::__uninitialized_fill_n_a<std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> >, std::vector<int, std::allocator<int> > >(std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > const&, std::allocator<std::vector<int, std::allocator<int> > >&) (in /mnt/c/Users/Simone/PP_project/memory)
+           n1: 116000 0x10C0DE: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_fill_initialize(unsigned long, std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+            n3: 116000 0x10B885: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::vector(unsigned long, std::vector<int, std::allocator<int> > const&, std::allocator<std::vector<int, std::allocator<int> > > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+             n1: 40000 0x10925E: partition(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+              n1: 40000 0x109691: parallel_sort(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+               n0: 40000 0x10AA64: main (in /mnt/c/Users/Simone/PP_project/memory)
+             n1: 40000 0x1094B4: parallel_sort(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+              n0: 40000 0x10AA64: main (in /mnt/c/Users/Simone/PP_project/memory)
+             n1: 36000 0x10954D: parallel_sort(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+              n0: 36000 0x10AA64: main (in /mnt/c/Users/Simone/PP_project/memory)
+      n0: 800 in 1 place, below massif's threshold (1.00%)
+ n1: 72704 0x4EC4424: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x40108D1: _dl_init (dl-init.c:72)
+   n0: 72704 0x40010C8: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)
+ n1: 7200 0x10D20F: __gnu_cxx::new_allocator<std::vector<int, std::allocator<int> > >::allocate(unsigned long, void const*) (in /mnt/c/Users/Simone/PP_project/memory)
+  n1: 7200 0x10D05F: std::allocator_traits<std::allocator<std::vector<int, std::allocator<int> > > >::allocate(std::allocator<std::vector<int, std::allocator<int> > >&, unsigned long) (in /mnt/c/Users/Simone/PP_project/memory)
+   n1: 7200 0x10CCDC: std::_Vector_base<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_allocate(unsigned long) (in /mnt/c/Users/Simone/PP_project/memory)
+    n1: 7200 0x10C749: std::_Vector_base<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_create_storage(unsigned long) (in /mnt/c/Users/Simone/PP_project/memory)
+     n1: 7200 0x10C01F: std::_Vector_base<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_Vector_base(unsigned long, std::allocator<std::vector<int, std::allocator<int> > > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+      n1: 7200 0x10B86E: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::vector(unsigned long, std::vector<int, std::allocator<int> > const&, std::allocator<std::vector<int, std::allocator<int> > > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+       n0: 7200 in 3 places, all below massif's threshold (1.00%)
+ n0: 5680 in 4 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=5
+#-----------
+time=55032928
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=57777763
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=detailed
+n4: 366784 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 281200 0x10CF4A: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /mnt/c/Users/Simone/PP_project/memory)
+  n1: 281200 0x10CABF: std::allocator_traits<std::allocator<int> >::allocate(std::allocator<int>&, unsigned long) (in /mnt/c/Users/Simone/PP_project/memory)
+   n1: 281200 0x10C488: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /mnt/c/Users/Simone/PP_project/memory)
+    n1: 281200 0x10C339: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /mnt/c/Users/Simone/PP_project/memory)
+     n3: 281200 0x10BABB: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /mnt/c/Users/Simone/PP_project/memory)
+      n6: 172400 0x10B3A6: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /mnt/c/Users/Simone/PP_project/memory)
+       n1: 40000 0x1095A2: parallel_sort(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+        n0: 40000 0x10AA64: main (in /mnt/c/Users/Simone/PP_project/memory)
+       n1: 40000 0x109666: parallel_sort(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+        n0: 40000 0x10AA64: main (in /mnt/c/Users/Simone/PP_project/memory)
+       n0: 40000 0x10A9C6: main (in /mnt/c/Users/Simone/PP_project/memory)
+       n0: 40000 0x10A9F7: main (in /mnt/c/Users/Simone/PP_project/memory)
+       n1: 12400 0x1090BD: prefix_sum(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+        n1: 12400 0x109768: parallel_sort(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+         n0: 12400 0x10AA64: main (in /mnt/c/Users/Simone/PP_project/memory)
+       n0: 0 in 1 place, below massif's threshold (1.00%)
+      n1: 108000 0x10D3A5: std::vector<int, std::allocator<int> >::vector(std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+       n1: 108000 0x10D267: void std::_Construct<std::vector<int, std::allocator<int> >, std::vector<int, std::allocator<int> > const&>(std::vector<int, std::allocator<int> >*, std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+        n1: 108000 0x10D0C7: std::vector<int, std::allocator<int> >* std::__uninitialized_fill_n<false>::__uninit_fill_n<std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > >(std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+         n1: 108000 0x10CD42: std::vector<int, std::allocator<int> >* std::uninitialized_fill_n<std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > >(std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+          n1: 108000 0x10C7EE: std::vector<int, std::allocator<int> >* std::__uninitialized_fill_n_a<std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> >, std::vector<int, std::allocator<int> > >(std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > const&, std::allocator<std::vector<int, std::allocator<int> > >&) (in /mnt/c/Users/Simone/PP_project/memory)
+           n1: 108000 0x10C0DE: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_fill_initialize(unsigned long, std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+            n3: 108000 0x10B885: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::vector(unsigned long, std::vector<int, std::allocator<int> > const&, std::allocator<std::vector<int, std::allocator<int> > > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+             n1: 40000 0x10925E: partition(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+              n1: 40000 0x109691: parallel_sort(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+               n0: 40000 0x10AA64: main (in /mnt/c/Users/Simone/PP_project/memory)
+             n1: 40000 0x1094B4: parallel_sort(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+              n0: 40000 0x10AA64: main (in /mnt/c/Users/Simone/PP_project/memory)
+             n1: 28000 0x10954D: parallel_sort(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+              n0: 28000 0x10AA64: main (in /mnt/c/Users/Simone/PP_project/memory)
+      n0: 800 in 1 place, below massif's threshold (1.00%)
+ n1: 72704 0x4EC4424: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x40108D1: _dl_init (dl-init.c:72)
+   n0: 72704 0x40010C8: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)
+ n1: 7200 0x10D20F: __gnu_cxx::new_allocator<std::vector<int, std::allocator<int> > >::allocate(unsigned long, void const*) (in /mnt/c/Users/Simone/PP_project/memory)
+  n1: 7200 0x10D05F: std::allocator_traits<std::allocator<std::vector<int, std::allocator<int> > > >::allocate(std::allocator<std::vector<int, std::allocator<int> > >&, unsigned long) (in /mnt/c/Users/Simone/PP_project/memory)
+   n1: 7200 0x10CCDC: std::_Vector_base<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_allocate(unsigned long) (in /mnt/c/Users/Simone/PP_project/memory)
+    n1: 7200 0x10C749: std::_Vector_base<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_create_storage(unsigned long) (in /mnt/c/Users/Simone/PP_project/memory)
+     n1: 7200 0x10C01F: std::_Vector_base<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_Vector_base(unsigned long, std::allocator<std::vector<int, std::allocator<int> > > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+      n1: 7200 0x10B86E: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::vector(unsigned long, std::vector<int, std::allocator<int> > const&, std::allocator<std::vector<int, std::allocator<int> > > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+       n0: 7200 in 3 places, all below massif's threshold (1.00%)
+ n0: 5680 in 4 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=7
+#-----------
+time=59779337
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=63786747
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=67124220
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=69405453
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=72370343
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=12
+#-----------
+time=76623416
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=79268054
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=83677859
+mem_heap_B=283584
+mem_heap_extra_B=1768
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=127417252
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=129533738
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=detailed
+n4: 366784 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 281200 0x10CF4A: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /mnt/c/Users/Simone/PP_project/memory)
+  n1: 281200 0x10CABF: std::allocator_traits<std::allocator<int> >::allocate(std::allocator<int>&, unsigned long) (in /mnt/c/Users/Simone/PP_project/memory)
+   n1: 281200 0x10C488: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /mnt/c/Users/Simone/PP_project/memory)
+    n1: 281200 0x10C339: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /mnt/c/Users/Simone/PP_project/memory)
+     n3: 281200 0x10BABB: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /mnt/c/Users/Simone/PP_project/memory)
+      n4: 162400 0x10B3A6: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /mnt/c/Users/Simone/PP_project/memory)
+       n1: 80000 0x109666: parallel_sort(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+        n0: 80000 0x10AA64: main (in /mnt/c/Users/Simone/PP_project/memory)
+       n1: 40000 0x1095A2: parallel_sort(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+        n0: 40000 0x10AA64: main (in /mnt/c/Users/Simone/PP_project/memory)
+       n0: 40000 0x10A9C6: main (in /mnt/c/Users/Simone/PP_project/memory)
+       n0: 2400 in 3 places, all below massif's threshold (1.00%)
+      n1: 118000 0x10D3A5: std::vector<int, std::allocator<int> >::vector(std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+       n1: 118000 0x10D267: void std::_Construct<std::vector<int, std::allocator<int> >, std::vector<int, std::allocator<int> > const&>(std::vector<int, std::allocator<int> >*, std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+        n1: 118000 0x10D0C7: std::vector<int, std::allocator<int> >* std::__uninitialized_fill_n<false>::__uninit_fill_n<std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > >(std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+         n1: 118000 0x10CD42: std::vector<int, std::allocator<int> >* std::uninitialized_fill_n<std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > >(std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+          n1: 118000 0x10C7EE: std::vector<int, std::allocator<int> >* std::__uninitialized_fill_n_a<std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> >, std::vector<int, std::allocator<int> > >(std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > const&, std::allocator<std::vector<int, std::allocator<int> > >&) (in /mnt/c/Users/Simone/PP_project/memory)
+           n1: 118000 0x10C0DE: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_fill_initialize(unsigned long, std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+            n3: 118000 0x10B885: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::vector(unsigned long, std::vector<int, std::allocator<int> > const&, std::allocator<std::vector<int, std::allocator<int> > > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+             n1: 40000 0x10925E: partition(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+              n1: 40000 0x109691: parallel_sort(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+               n0: 40000 0x10AA64: main (in /mnt/c/Users/Simone/PP_project/memory)
+             n1: 40000 0x1094B4: parallel_sort(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+              n0: 40000 0x10AA64: main (in /mnt/c/Users/Simone/PP_project/memory)
+             n1: 38000 0x10954D: parallel_sort(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+              n0: 38000 0x10AA64: main (in /mnt/c/Users/Simone/PP_project/memory)
+      n0: 800 in 1 place, below massif's threshold (1.00%)
+ n1: 72704 0x4EC4424: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x40108D1: _dl_init (dl-init.c:72)
+   n0: 72704 0x40010C8: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)
+ n1: 7200 0x10D20F: __gnu_cxx::new_allocator<std::vector<int, std::allocator<int> > >::allocate(unsigned long, void const*) (in /mnt/c/Users/Simone/PP_project/memory)
+  n1: 7200 0x10D05F: std::allocator_traits<std::allocator<std::vector<int, std::allocator<int> > > >::allocate(std::allocator<std::vector<int, std::allocator<int> > >&, unsigned long) (in /mnt/c/Users/Simone/PP_project/memory)
+   n1: 7200 0x10CCDC: std::_Vector_base<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_allocate(unsigned long) (in /mnt/c/Users/Simone/PP_project/memory)
+    n1: 7200 0x10C749: std::_Vector_base<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_create_storage(unsigned long) (in /mnt/c/Users/Simone/PP_project/memory)
+     n1: 7200 0x10C01F: std::_Vector_base<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_Vector_base(unsigned long, std::allocator<std::vector<int, std::allocator<int> > > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+      n1: 7200 0x10B86E: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::vector(unsigned long, std::vector<int, std::allocator<int> > const&, std::allocator<std::vector<int, std::allocator<int> > > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+       n0: 7200 in 3 places, all below massif's threshold (1.00%)
+ n0: 5680 in 4 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=17
+#-----------
+time=132736439
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=135070260
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=19
+#-----------
+time=138134939
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=141073022
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=21
+#-----------
+time=145330818
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=148986086
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=23
+#-----------
+time=152294034
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=24
+#-----------
+time=156287695
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=25
+#-----------
+time=159267143
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=26
+#-----------
+time=161364886
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=163705085
+mem_heap_B=283984
+mem_heap_extra_B=1776
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=207453853
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=29
+#-----------
+time=209841613
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=212321407
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=31
+#-----------
+time=216644453
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=219581311
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=223248436
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=detailed
+n4: 366784 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 281200 0x10CF4A: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /mnt/c/Users/Simone/PP_project/memory)
+  n1: 281200 0x10CABF: std::allocator_traits<std::allocator<int> >::allocate(std::allocator<int>&, unsigned long) (in /mnt/c/Users/Simone/PP_project/memory)
+   n1: 281200 0x10C488: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /mnt/c/Users/Simone/PP_project/memory)
+    n1: 281200 0x10C339: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /mnt/c/Users/Simone/PP_project/memory)
+     n3: 281200 0x10BABB: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /mnt/c/Users/Simone/PP_project/memory)
+      n5: 179200 0x10B3A6: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /mnt/c/Users/Simone/PP_project/memory)
+       n1: 80000 0x109666: parallel_sort(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+        n0: 80000 0x10AA64: main (in /mnt/c/Users/Simone/PP_project/memory)
+       n1: 40000 0x1095A2: parallel_sort(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+        n0: 40000 0x10AA64: main (in /mnt/c/Users/Simone/PP_project/memory)
+       n0: 40000 0x10A9C6: main (in /mnt/c/Users/Simone/PP_project/memory)
+       n2: 19200 0x1090BD: prefix_sum(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+        n1: 19200 0x109768: parallel_sort(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+         n0: 19200 0x10AA64: main (in /mnt/c/Users/Simone/PP_project/memory)
+        n0: 0 in 1 place, below massif's threshold (1.00%)
+       n0: 0 in 2 places, all below massif's threshold (1.00%)
+      n1: 101200 0x10D3A5: std::vector<int, std::allocator<int> >::vector(std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+       n1: 101200 0x10D267: void std::_Construct<std::vector<int, std::allocator<int> >, std::vector<int, std::allocator<int> > const&>(std::vector<int, std::allocator<int> >*, std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+        n1: 101200 0x10D0C7: std::vector<int, std::allocator<int> >* std::__uninitialized_fill_n<false>::__uninit_fill_n<std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > >(std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+         n1: 101200 0x10CD42: std::vector<int, std::allocator<int> >* std::uninitialized_fill_n<std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > >(std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+          n1: 101200 0x10C7EE: std::vector<int, std::allocator<int> >* std::__uninitialized_fill_n_a<std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> >, std::vector<int, std::allocator<int> > >(std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > const&, std::allocator<std::vector<int, std::allocator<int> > >&) (in /mnt/c/Users/Simone/PP_project/memory)
+           n1: 101200 0x10C0DE: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_fill_initialize(unsigned long, std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+            n3: 101200 0x10B885: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::vector(unsigned long, std::vector<int, std::allocator<int> > const&, std::allocator<std::vector<int, std::allocator<int> > > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+             n1: 40000 0x10925E: partition(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+              n1: 40000 0x109691: parallel_sort(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+               n0: 40000 0x10AA64: main (in /mnt/c/Users/Simone/PP_project/memory)
+             n1: 40000 0x1094B4: parallel_sort(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+              n0: 40000 0x10AA64: main (in /mnt/c/Users/Simone/PP_project/memory)
+             n1: 21200 0x10954D: parallel_sort(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+              n0: 21200 0x10AA64: main (in /mnt/c/Users/Simone/PP_project/memory)
+      n0: 800 in 1 place, below massif's threshold (1.00%)
+ n1: 72704 0x4EC4424: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x40108D1: _dl_init (dl-init.c:72)
+   n0: 72704 0x40010C8: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)
+ n1: 7200 0x10D20F: __gnu_cxx::new_allocator<std::vector<int, std::allocator<int> > >::allocate(unsigned long, void const*) (in /mnt/c/Users/Simone/PP_project/memory)
+  n1: 7200 0x10D05F: std::allocator_traits<std::allocator<std::vector<int, std::allocator<int> > > >::allocate(std::allocator<std::vector<int, std::allocator<int> > >&, unsigned long) (in /mnt/c/Users/Simone/PP_project/memory)
+   n1: 7200 0x10CCDC: std::_Vector_base<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_allocate(unsigned long) (in /mnt/c/Users/Simone/PP_project/memory)
+    n1: 7200 0x10C749: std::_Vector_base<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_create_storage(unsigned long) (in /mnt/c/Users/Simone/PP_project/memory)
+     n1: 7200 0x10C01F: std::_Vector_base<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_Vector_base(unsigned long, std::allocator<std::vector<int, std::allocator<int> > > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+      n1: 7200 0x10B86E: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::vector(unsigned long, std::vector<int, std::allocator<int> > const&, std::allocator<std::vector<int, std::allocator<int> > > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+       n0: 7200 in 3 places, all below massif's threshold (1.00%)
+ n0: 5680 in 4 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=34
+#-----------
+time=225916410
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=35
+#-----------
+time=228478650
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=232462304
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=37
+#-----------
+time=236864521
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=38
+#-----------
+time=241113311
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=243878322
+mem_heap_B=324384
+mem_heap_extra_B=1792
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=40
+#-----------
+time=287527871
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=291221219
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=detailed
+n4: 366784 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 281200 0x10CF4A: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /mnt/c/Users/Simone/PP_project/memory)
+  n1: 281200 0x10CABF: std::allocator_traits<std::allocator<int> >::allocate(std::allocator<int>&, unsigned long) (in /mnt/c/Users/Simone/PP_project/memory)
+   n1: 281200 0x10C488: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /mnt/c/Users/Simone/PP_project/memory)
+    n1: 281200 0x10C339: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /mnt/c/Users/Simone/PP_project/memory)
+     n3: 281200 0x10BABB: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /mnt/c/Users/Simone/PP_project/memory)
+      n5: 164400 0x10B3A6: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /mnt/c/Users/Simone/PP_project/memory)
+       n1: 80000 0x109666: parallel_sort(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+        n0: 80000 0x10AA64: main (in /mnt/c/Users/Simone/PP_project/memory)
+       n1: 40000 0x1095A2: parallel_sort(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+        n0: 40000 0x10AA64: main (in /mnt/c/Users/Simone/PP_project/memory)
+       n0: 40000 0x10A9C6: main (in /mnt/c/Users/Simone/PP_project/memory)
+       n2: 4400 0x1090BD: prefix_sum(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+        n1: 4400 0x109768: parallel_sort(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+         n0: 4400 0x10AA64: main (in /mnt/c/Users/Simone/PP_project/memory)
+        n0: 0 in 1 place, below massif's threshold (1.00%)
+       n0: 0 in 2 places, all below massif's threshold (1.00%)
+      n1: 116000 0x10D3A5: std::vector<int, std::allocator<int> >::vector(std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+       n1: 116000 0x10D267: void std::_Construct<std::vector<int, std::allocator<int> >, std::vector<int, std::allocator<int> > const&>(std::vector<int, std::allocator<int> >*, std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+        n1: 116000 0x10D0C7: std::vector<int, std::allocator<int> >* std::__uninitialized_fill_n<false>::__uninit_fill_n<std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > >(std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+         n1: 116000 0x10CD42: std::vector<int, std::allocator<int> >* std::uninitialized_fill_n<std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > >(std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+          n1: 116000 0x10C7EE: std::vector<int, std::allocator<int> >* std::__uninitialized_fill_n_a<std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> >, std::vector<int, std::allocator<int> > >(std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > const&, std::allocator<std::vector<int, std::allocator<int> > >&) (in /mnt/c/Users/Simone/PP_project/memory)
+           n1: 116000 0x10C0DE: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_fill_initialize(unsigned long, std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+            n3: 116000 0x10B885: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::vector(unsigned long, std::vector<int, std::allocator<int> > const&, std::allocator<std::vector<int, std::allocator<int> > > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+             n1: 40000 0x10925E: partition(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+              n1: 40000 0x109691: parallel_sort(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+               n0: 40000 0x10AA64: main (in /mnt/c/Users/Simone/PP_project/memory)
+             n1: 40000 0x1094B4: parallel_sort(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+              n0: 40000 0x10AA64: main (in /mnt/c/Users/Simone/PP_project/memory)
+             n1: 36000 0x10954D: parallel_sort(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+              n0: 36000 0x10AA64: main (in /mnt/c/Users/Simone/PP_project/memory)
+      n0: 800 in 1 place, below massif's threshold (1.00%)
+ n1: 72704 0x4EC4424: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x40108D1: _dl_init (dl-init.c:72)
+   n0: 72704 0x40010C8: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)
+ n1: 7200 0x10D20F: __gnu_cxx::new_allocator<std::vector<int, std::allocator<int> > >::allocate(unsigned long, void const*) (in /mnt/c/Users/Simone/PP_project/memory)
+  n1: 7200 0x10D05F: std::allocator_traits<std::allocator<std::vector<int, std::allocator<int> > > >::allocate(std::allocator<std::vector<int, std::allocator<int> > >&, unsigned long) (in /mnt/c/Users/Simone/PP_project/memory)
+   n1: 7200 0x10CCDC: std::_Vector_base<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_allocate(unsigned long) (in /mnt/c/Users/Simone/PP_project/memory)
+    n1: 7200 0x10C749: std::_Vector_base<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_create_storage(unsigned long) (in /mnt/c/Users/Simone/PP_project/memory)
+     n1: 7200 0x10C01F: std::_Vector_base<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_Vector_base(unsigned long, std::allocator<std::vector<int, std::allocator<int> > > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+      n1: 7200 0x10B86E: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::vector(unsigned long, std::vector<int, std::allocator<int> > const&, std::allocator<std::vector<int, std::allocator<int> > > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+       n0: 7200 in 3 places, all below massif's threshold (1.00%)
+ n0: 5680 in 4 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=42
+#-----------
+time=293873917
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=295824159
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=44
+#-----------
+time=298586555
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=301004416
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=303568134
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=305983780
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=309593653
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=313820248
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=detailed
+n4: 366784 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 281200 0x10CF4A: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /mnt/c/Users/Simone/PP_project/memory)
+  n1: 281200 0x10CABF: std::allocator_traits<std::allocator<int> >::allocate(std::allocator<int>&, unsigned long) (in /mnt/c/Users/Simone/PP_project/memory)
+   n1: 281200 0x10C488: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /mnt/c/Users/Simone/PP_project/memory)
+    n1: 281200 0x10C339: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /mnt/c/Users/Simone/PP_project/memory)
+     n3: 281200 0x10BABB: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /mnt/c/Users/Simone/PP_project/memory)
+      n5: 192000 0x10B3A6: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /mnt/c/Users/Simone/PP_project/memory)
+       n1: 80000 0x109666: parallel_sort(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+        n0: 80000 0x10AA64: main (in /mnt/c/Users/Simone/PP_project/memory)
+       n1: 40000 0x1095A2: parallel_sort(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+        n0: 40000 0x10AA64: main (in /mnt/c/Users/Simone/PP_project/memory)
+       n0: 40000 0x10A9C6: main (in /mnt/c/Users/Simone/PP_project/memory)
+       n2: 32000 0x1090BD: prefix_sum(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+        n1: 32000 0x109768: parallel_sort(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+         n0: 32000 0x10AA64: main (in /mnt/c/Users/Simone/PP_project/memory)
+        n0: 0 in 1 place, below massif's threshold (1.00%)
+       n0: 0 in 2 places, all below massif's threshold (1.00%)
+      n1: 88400 0x10D3A5: std::vector<int, std::allocator<int> >::vector(std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+       n1: 88400 0x10D267: void std::_Construct<std::vector<int, std::allocator<int> >, std::vector<int, std::allocator<int> > const&>(std::vector<int, std::allocator<int> >*, std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+        n1: 88400 0x10D0C7: std::vector<int, std::allocator<int> >* std::__uninitialized_fill_n<false>::__uninit_fill_n<std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > >(std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+         n1: 88400 0x10CD42: std::vector<int, std::allocator<int> >* std::uninitialized_fill_n<std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > >(std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+          n1: 88400 0x10C7EE: std::vector<int, std::allocator<int> >* std::__uninitialized_fill_n_a<std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> >, std::vector<int, std::allocator<int> > >(std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > const&, std::allocator<std::vector<int, std::allocator<int> > >&) (in /mnt/c/Users/Simone/PP_project/memory)
+           n1: 88400 0x10C0DE: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_fill_initialize(unsigned long, std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+            n3: 88400 0x10B885: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::vector(unsigned long, std::vector<int, std::allocator<int> > const&, std::allocator<std::vector<int, std::allocator<int> > > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+             n1: 40000 0x10925E: partition(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+              n1: 40000 0x109691: parallel_sort(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+               n0: 40000 0x10AA64: main (in /mnt/c/Users/Simone/PP_project/memory)
+             n1: 40000 0x1094B4: parallel_sort(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+              n0: 40000 0x10AA64: main (in /mnt/c/Users/Simone/PP_project/memory)
+             n1: 8400 0x10954D: parallel_sort(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+              n0: 8400 0x10AA64: main (in /mnt/c/Users/Simone/PP_project/memory)
+      n0: 800 in 1 place, below massif's threshold (1.00%)
+ n1: 72704 0x4EC4424: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x40108D1: _dl_init (dl-init.c:72)
+   n0: 72704 0x40010C8: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)
+ n1: 7200 0x10D20F: __gnu_cxx::new_allocator<std::vector<int, std::allocator<int> > >::allocate(unsigned long, void const*) (in /mnt/c/Users/Simone/PP_project/memory)
+  n1: 7200 0x10D05F: std::allocator_traits<std::allocator<std::vector<int, std::allocator<int> > > >::allocate(std::allocator<std::vector<int, std::allocator<int> > >&, unsigned long) (in /mnt/c/Users/Simone/PP_project/memory)
+   n1: 7200 0x10CCDC: std::_Vector_base<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_allocate(unsigned long) (in /mnt/c/Users/Simone/PP_project/memory)
+    n1: 7200 0x10C749: std::_Vector_base<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_create_storage(unsigned long) (in /mnt/c/Users/Simone/PP_project/memory)
+     n1: 7200 0x10C01F: std::_Vector_base<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_Vector_base(unsigned long, std::allocator<std::vector<int, std::allocator<int> > > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+      n1: 7200 0x10B86E: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::vector(unsigned long, std::vector<int, std::allocator<int> > const&, std::allocator<std::vector<int, std::allocator<int> > > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+       n0: 7200 in 3 places, all below massif's threshold (1.00%)
+ n0: 5680 in 4 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=50
+#-----------
+time=314201347
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=314630447
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=52
+#-----------
+time=314995679
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=53
+#-----------
+time=315651292
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=54
+#-----------
+time=316334547
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=55
+#-----------
+time=316992446
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=56
+#-----------
+time=317353404
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=57
+#-----------
+time=318026021
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=58
+#-----------
+time=318648889
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=59
+#-----------
+time=319338372
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=detailed
+n4: 366784 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 281200 0x10CF4A: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /mnt/c/Users/Simone/PP_project/memory)
+  n1: 281200 0x10CABF: std::allocator_traits<std::allocator<int> >::allocate(std::allocator<int>&, unsigned long) (in /mnt/c/Users/Simone/PP_project/memory)
+   n1: 281200 0x10C488: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /mnt/c/Users/Simone/PP_project/memory)
+    n1: 281200 0x10C339: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /mnt/c/Users/Simone/PP_project/memory)
+     n3: 281200 0x10BABB: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /mnt/c/Users/Simone/PP_project/memory)
+      n5: 198400 0x10B3A6: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /mnt/c/Users/Simone/PP_project/memory)
+       n1: 80000 0x109666: parallel_sort(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+        n0: 80000 0x10AA64: main (in /mnt/c/Users/Simone/PP_project/memory)
+       n1: 40000 0x1095A2: parallel_sort(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+        n0: 40000 0x10AA64: main (in /mnt/c/Users/Simone/PP_project/memory)
+       n0: 40000 0x10A9C6: main (in /mnt/c/Users/Simone/PP_project/memory)
+       n2: 38400 0x1090BD: prefix_sum(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+        n1: 38400 0x109768: parallel_sort(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+         n0: 38400 0x10AA64: main (in /mnt/c/Users/Simone/PP_project/memory)
+        n0: 0 in 1 place, below massif's threshold (1.00%)
+       n0: 0 in 2 places, all below massif's threshold (1.00%)
+      n1: 82000 0x10D3A5: std::vector<int, std::allocator<int> >::vector(std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+       n1: 82000 0x10D267: void std::_Construct<std::vector<int, std::allocator<int> >, std::vector<int, std::allocator<int> > const&>(std::vector<int, std::allocator<int> >*, std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+        n1: 82000 0x10D0C7: std::vector<int, std::allocator<int> >* std::__uninitialized_fill_n<false>::__uninit_fill_n<std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > >(std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+         n1: 82000 0x10CD42: std::vector<int, std::allocator<int> >* std::uninitialized_fill_n<std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > >(std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+          n1: 82000 0x10C7EE: std::vector<int, std::allocator<int> >* std::__uninitialized_fill_n_a<std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> >, std::vector<int, std::allocator<int> > >(std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > const&, std::allocator<std::vector<int, std::allocator<int> > >&) (in /mnt/c/Users/Simone/PP_project/memory)
+           n1: 82000 0x10C0DE: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_fill_initialize(unsigned long, std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+            n3: 82000 0x10B885: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::vector(unsigned long, std::vector<int, std::allocator<int> > const&, std::allocator<std::vector<int, std::allocator<int> > > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+             n1: 40000 0x10925E: partition(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+              n1: 40000 0x109691: parallel_sort(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+               n0: 40000 0x10AA64: main (in /mnt/c/Users/Simone/PP_project/memory)
+             n1: 40000 0x1094B4: parallel_sort(std::vector<int, std::allocator<int> >&, int) (in /mnt/c/Users/Simone/PP_project/memory)
+              n0: 40000 0x10AA64: main (in /mnt/c/Users/Simone/PP_project/memory)
+             n0: 2000 in 1 place, below massif's threshold (1.00%)
+      n0: 800 in 1 place, below massif's threshold (1.00%)
+ n1: 72704 0x4EC4424: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x40108D1: _dl_init (dl-init.c:72)
+   n0: 72704 0x40010C8: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)
+ n1: 7200 0x10D20F: __gnu_cxx::new_allocator<std::vector<int, std::allocator<int> > >::allocate(unsigned long, void const*) (in /mnt/c/Users/Simone/PP_project/memory)
+  n1: 7200 0x10D05F: std::allocator_traits<std::allocator<std::vector<int, std::allocator<int> > > >::allocate(std::allocator<std::vector<int, std::allocator<int> > >&, unsigned long) (in /mnt/c/Users/Simone/PP_project/memory)
+   n1: 7200 0x10CCDC: std::_Vector_base<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_allocate(unsigned long) (in /mnt/c/Users/Simone/PP_project/memory)
+    n1: 7200 0x10C749: std::_Vector_base<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_create_storage(unsigned long) (in /mnt/c/Users/Simone/PP_project/memory)
+     n1: 7200 0x10C01F: std::_Vector_base<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_Vector_base(unsigned long, std::allocator<std::vector<int, std::allocator<int> > > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+      n1: 7200 0x10B86E: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::vector(unsigned long, std::vector<int, std::allocator<int> > const&, std::allocator<std::vector<int, std::allocator<int> > > const&) (in /mnt/c/Users/Simone/PP_project/memory)
+       n0: 7200 in 3 places, all below massif's threshold (1.00%)
+ n0: 5680 in 4 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=60
+#-----------
+time=319738749
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=61
+#-----------
+time=320380885
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=62
+#-----------
+time=321167177
+mem_heap_B=366784
+mem_heap_extra_B=2600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=63
+#-----------
+time=323549050
+mem_heap_B=365984
+mem_heap_extra_B=2584
+mem_stacks_B=0
+heap_tree=empty
