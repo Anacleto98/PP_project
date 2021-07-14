@@ -37,8 +37,8 @@ std::vector<int> prefix_sum(std::vector<int> &a)
 void partition(std::vector<int> &src, std::vector<std::vector<int>> &dest, int r)
 {   
     int N = src.size();
-
     int j;
+
     #pragma omp parallel for private(j)
     for(int i = 0; i < N/r; i++)
         for(j = 0; j < r; j++)
@@ -108,10 +108,19 @@ std::vector<int> parallel_sort(std::vector<int> &a, int r)
     
 
     partition(a,b,r);
-
-    init_number(number,b,N,r);
-    
-    init_serial(serial,b,N,r);
+   
+    #pragma omp parallel sections
+    {
+        #pragma omp section
+        {
+            init_number(number,b,N,r);
+        }
+        #pragma omp section
+        {
+            init_serial(serial,b,N,r);
+        }
+    }
+   
 
     for(int i = 0; i< r; i++)
     {
@@ -119,20 +128,14 @@ std::vector<int> parallel_sort(std::vector<int> &a, int r)
     }
 
 
-    int j,sum;
-    #pragma omp parallel for private(j,sum) 
+    #pragma omp parallel for 
     for(int i = 0; i < r; i++)
-    {   
-        sum = 0;
-        //#pragma omp parallel for reduction(+:sum)
-        for(j = 0; j < N/r; j++)
-        {
-            sum += number[i][j];
-        } 
-        cardinality[i] = sum;
+    {
+        cardinality[i] = prefix_sums[i].back();
     }
 
     global = prefix_sum(cardinality);
+
 
   
 
@@ -149,13 +152,14 @@ std::vector<int> parallel_sort(std::vector<int> &a, int r)
             gl = 0; 
         
         s = ceil(i/r)-1;
+
         if(s >= 0)
             pf = prefix_sums[a[i]][s];
         else 
             pf = 0;
+
         result[serial[i]+pf+gl] = a[i];
 
-       
     }
 
 

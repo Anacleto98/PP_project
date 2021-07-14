@@ -4,6 +4,9 @@
 #include <omp.h>
 #include <benchmark/benchmark.h>
 
+#define D 2048
+#define MAX 27
+
 void BM_serial_sort(benchmark::State& state) {
     
 
@@ -12,7 +15,7 @@ void BM_serial_sort(benchmark::State& state) {
     omp_set_num_threads(1);
     
     int n = state.range(0);
-    int r = n/256;
+    int r = n/D;
     std::vector<int> arr(n);
     std::vector<int> result(n);
 
@@ -34,7 +37,7 @@ void BM_parallel_sort_2(benchmark::State& state) {
     omp_set_num_threads(2);
     
     int n = state.range(0);
-    int r = n/256;
+    int r = n/D;
     std::vector<int> arr(n);
     std::vector<int> result(n);
 
@@ -56,7 +59,7 @@ void BM_parallel_sort_4(benchmark::State& state) {
     omp_set_num_threads(4);
     
     int n = state.range(0);
-    int r = n/256;
+    int r = n/D;
     std::vector<int> arr(n);
     std::vector<int> result(n);
 
@@ -78,7 +81,7 @@ void BM_parallel_sort_8(benchmark::State& state) {
     omp_set_num_threads(8);
     
     int n = state.range(0);
-    int r = n/256;
+    int r = n/D;
     std::vector<int> arr(n);
     std::vector<int> result(n);
 
@@ -100,7 +103,7 @@ void BM_parallel_sort_16(benchmark::State& state) {
     omp_set_num_threads(16);
     
     int n = state.range(0);
-    int r = n/128;
+    int r = n/D;
     std::vector<int> arr(n);
     std::vector<int> result(n);
 
@@ -116,20 +119,20 @@ void BM_parallel_sort_16(benchmark::State& state) {
 
 
 BENCHMARK(BM_serial_sort)
-    ->RangeMultiplier(2)->Range(4096, 1<<25)->UseRealTime()->Complexity(benchmark::oN);
+    ->RangeMultiplier(2)->Range(1<<18, 1<<MAX)->UseRealTime()->Complexity(benchmark::oN);
 
 BENCHMARK(BM_parallel_sort_2)
-    ->RangeMultiplier(2)->Range(4096, 1<<25)->UseRealTime()->Complexity(benchmark::oN);
+    ->RangeMultiplier(2)->Range(1<<18, 1<<MAX)->UseRealTime()->Complexity(benchmark::oN);
 
 
 BENCHMARK(BM_parallel_sort_4)
-    ->RangeMultiplier(2)->Range(4096, 1<<25)->UseRealTime()->Complexity(benchmark::oN);
+    ->RangeMultiplier(2)->Range(1<<18, 1<<MAX)->UseRealTime()->Complexity(benchmark::oN);
 
 BENCHMARK(BM_parallel_sort_8)
-    ->RangeMultiplier(2)->Range(4096, 1<<25)->UseRealTime()->Complexity(benchmark::oN);
+    ->RangeMultiplier(2)->Range(1<<18, 1<<MAX)->UseRealTime()->Complexity(benchmark::oN);
 
 BENCHMARK(BM_parallel_sort_16)
-    ->RangeMultiplier(2)->Range(4096, 1<<25)->UseRealTime()->Complexity(benchmark::oN);
+    ->RangeMultiplier(2)->Range(1<<18, 1<<MAX)->UseRealTime()->Complexity(benchmark::oN);
 
 
 BENCHMARK_MAIN();

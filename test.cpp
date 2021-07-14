@@ -3,12 +3,12 @@
 #include <vector>
 #include "utils.cpp"
 
-
+#define DIV 16384
 
 int main()
 {
-    int n = 100000000;
-    int r = 10000;
+    int n = 1<<24;
+    int r = 4096;
 
     omp_set_nested(1);
     omp_set_dynamic(0);
@@ -23,5 +23,6 @@ int main()
     
     result = parallel_sort(arr,r);
 
+    std::cout<<check_ordered(result)<<std::endl;
     return 0;
 }
