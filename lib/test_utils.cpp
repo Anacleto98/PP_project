@@ -1,6 +1,21 @@
 #include <vector>
 #include "utils.cpp"
-#include "parallel_sort_optimized.cpp"
+#include "parallel_sort.cpp"
+
+
+int check_ordered(std::vector<int> &vec)
+{
+    for(int i = 1; i < vec.size(); i++)
+    {
+        if(vec[i]<vec[i-1])
+        {
+            std::cout<<"Error in position: "<<i<<" vec[i]:"<<vec[i]<<" vec[i-1]:"<<vec[i-1]<<std::endl;
+            return 0;
+        }     
+    }
+    return 1;
+}
+
 
 int test_correctness(std::vector<int> &vec, int r)
 {

@@ -1,4 +1,4 @@
-#include "parallel_sort_optimized.cpp"
+#include "parallel_sort.cpp"
 #include <vector>
 #include "utils.cpp"
 #include <omp.h>

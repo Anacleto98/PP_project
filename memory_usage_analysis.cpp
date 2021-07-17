@@ -1,4 +1,4 @@
-#include "lib/parallel_sort_optimized.cpp"
+#include "lib/parallel_sort.cpp"
 #include <vector>
 #include "lib/utils.cpp"
 
