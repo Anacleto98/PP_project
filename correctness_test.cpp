@@ -1,7 +1,7 @@
 #include <cmath>
 #include <vector>
 #include <iostream>
-#include "lib/test.cpp"
+#include "lib/test_utils.cpp"
 
 #define MIN 1<<6
 #define MAX 1<<26
