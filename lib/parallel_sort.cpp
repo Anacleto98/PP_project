@@ -165,10 +165,21 @@ std::vector<int> parallel_sort(std::vector<int> &a, int r)
 // this wrapper adds the padding phase 
 std::vector<int> sort(std::vector<int> &a, int r)
 {   
+    int n = a.size();
     std::vector<int> result;
-    int padded = padding(a,r);
+    int to_pad = 0;
+    int padded;
+
+    if(n % r != 0)
+    {   
+        to_pad = 1;
+        padded = padding(a,r);
+    }
     result = parallel_sort(a,r);
-    reset_vec(a,padded);
-    reset_vec(result,padded);
+    if(to_pad)
+    {
+        reset_vec(a,padded);
+        reset_vec(result,padded);
+    }
     return result;
 }

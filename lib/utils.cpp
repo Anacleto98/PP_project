@@ -39,20 +39,6 @@ void print_vector(std::vector<int> &vec)
     
 }
 
-int check_ordered(std::vector<int> &vec)
-{
-    for(int i = 1; i < vec.size(); i++)
-    {
-        if(vec[i]<vec[i-1])
-        {
-            std::cout<<"Error in position: "<<i<<" vec[i]:"<<vec[i]<<" vec[i-1]:"<<vec[i-1]<<std::endl;
-            return 0;
-        }     
-    }
-    return 1;
-}
-
-
 int padding(std::vector<int> &vec, int r)
 {
     int n = vec.size();
