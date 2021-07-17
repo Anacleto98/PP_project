@@ -14,20 +14,15 @@ std::vector<int> prefix_sum(std::vector<int> &a)
     std::vector<int> b(S);
     std::vector<int> p_sum(S);
     int range = 1;
-    int offset = 1;
     p_sum = a;
 
-    for(; offset<S; range *= 2)
+    for(; range<S; range *= 2)
     {
-    
         b = p_sum;
-
         #pragma omp parallel for 
-        for(int i = offset; i < S; i++){
+        for(int i = range; i < S; i++){
             p_sum[i] = b[i]+b[i-range];
         }
-        
-        offset *= 2;
     }
     return p_sum;
 }
@@ -105,7 +100,6 @@ std::vector<int> parallel_sort(std::vector<int> &a, int r)
     std::vector<std::vector<int>> b(N/r,std::vector<int>(r));
     std::vector<int> cardinality(r,0);
     std::vector<int> global(r,0);
-    
 
     partition(a,b,r);
    
@@ -167,3 +161,14 @@ std::vector<int> parallel_sort(std::vector<int> &a, int r)
 
 }
 
+
+// this wrapper adds the padding phase 
+std::vector<int> sort(std::vector<int> &a, int r)
+{   
+    std::vector<int> result;
+    int padded = padding(a,r);
+    result = parallel_sort(a,r);
+    reset_vec(a,padded);
+    reset_vec(result,padded);
+    return result;
+}
