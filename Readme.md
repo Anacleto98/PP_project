@@ -2,7 +2,7 @@
 
 <pre>
 .
-├── Presentation                        /* Presentation slides          */
+├── presentazione                       /* slides                       */
 ├── bin                                 /* time performances binaries   */
 │   ├── benchmark_bucket_o0
 │   ├── benchmark_bucket_o1
