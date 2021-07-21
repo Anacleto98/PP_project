@@ -1,6 +1,6 @@
 #include "lib/parallel_sort.cpp"
 #include <vector>
-#include "lib/utils.cpp"
+#include "lib/test_utils.cpp"
 
 
 int main()

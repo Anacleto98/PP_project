@@ -1,6 +1,6 @@
-#include "parallel_sort.cpp"
+#include "lib/parallel_sort.cpp"
 #include <vector>
-#include "utils.cpp"
+#include "lib/utils.cpp"
 #include <omp.h>
 #include <benchmark/benchmark.h>
 
