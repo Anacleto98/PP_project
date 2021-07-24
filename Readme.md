@@ -1,3 +1,7 @@
+<b>Optional PP project for Advanced algorithms and parallel programming course.</b>
+
+The project is a parallel integer sorting algorithm, where integers are in a fixed range. 
+
 <b>Repository tree:</b><br/>
 
 <pre>
